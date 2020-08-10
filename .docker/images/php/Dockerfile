@@ -1,4 +1,4 @@
-FROM php:7.4-fpm-alpine as base
+FROM php:7.4-fpm as base
 
 # COPY php.ini /data/php74/php.ini
 
