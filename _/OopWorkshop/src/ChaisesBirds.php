@@ -5,6 +5,6 @@ trait ChaisesBirds
 {
     public function chace(): void
     {
-         //$this->
+        //$this->
     }
 }
