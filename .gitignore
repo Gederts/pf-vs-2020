@@ -1,1 +1,5 @@
 .idea
+vendor
+
+_/OopWorkshop/vendor
+_/TestWorkshop/vendor
