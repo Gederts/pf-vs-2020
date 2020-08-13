@@ -1,12 +1,11 @@
 <?php
-
 use Project\Components\View;
+
 /**
  * @var View $this
- * @var array $array
  */
+$this->title= "ERROR 404";
 
-$this->title = 'Index page';
 ?>
 
-Index page
+<h1>page not found</h1>

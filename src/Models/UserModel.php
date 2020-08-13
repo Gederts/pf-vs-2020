@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property string $email
  * @property string $name
  */
-class QuestionModel extends Model
+class UserModel extends Model
 {
     protected $table = 'users';
     public $timestamps = false;

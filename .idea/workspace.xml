@@ -9,43 +9,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="24663259-532b-4ea6-8fc1-e2d0fe27ba05" name="Default Changelist" comment="added Repositories, Models, Services">
-      <change afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bootstrap/app.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/migrations/20200812113239_create_table_quizzes.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/migrations/20200812115456_create_table_questions.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/migrations/20200812120900_create_table_answers.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/migrations/20200812121444_create_table_users.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/migrations/20200813061224_create_table_user_quiz_attempts.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/migrations/20200813061329_create_table_user_quiz_attempt_answers.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/seeds/QuizSeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pf-vs-2020" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/phinx.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Controller.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Route.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Router.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Session.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/View.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controllers/AuthController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controllers/ErrorController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controllers/IndexController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Models/UserQuizAttemptAnswerModel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Models/UserQuizAttemptModel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repositories/QuizRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/pf-vs-2020.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pf-vs-2020.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/migrations/20200813135200_alter_table_users_add_password.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/layouts/default.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/error/404.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/login.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/register.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Structures/UserRegisterItem.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Traits/FromArrayTrait.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_/TestWorkshop/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/_/TestWorkshop/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_/TestWorkshop/src/BowlingGame.php" beforeDir="false" afterPath="$PROJECT_DIR$/_/TestWorkshop/src/PF/BowlingGame.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_/TestWorkshop/tests/BowlingGameTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/_/TestWorkshop/tests/BowlingGameTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/AnswerModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/AnswerModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/QuestionModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/QuestionModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/QuizModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/QuizModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/UserAnswerModel.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/View.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/View.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/AuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/ErrorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/ErrorController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Models/UserModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/UserModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/UserService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/UserService.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,7 +152,7 @@
       <workItem from="1597161679819" duration="3577000" />
       <workItem from="1597210803616" duration="20985000" />
       <workItem from="1597242826774" duration="3840000" />
-      <workItem from="1597296978857" duration="17565000" />
+      <workItem from="1597296978857" duration="27589000" />
     </task>
     <task id="LOCAL-00001" summary="gitignore">
       <created>1597149682193</created>
@@ -195,7 +175,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597154587903</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added Basic MVC structure">
+      <created>1597316407201</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1597316407201</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -248,7 +235,8 @@
     <MESSAGE value="gitignore" />
     <MESSAGE value="added composer.json + BowlingGame.php" />
     <MESSAGE value="added Repositories, Models, Services" />
-    <option name="LAST_COMMIT_MESSAGE" value="added Repositories, Models, Services" />
+    <MESSAGE value="Added Basic MVC structure" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Basic MVC structure" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="71" key="#Intentions" timestamp="1597307241670">
@@ -303,14 +291,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="189" height="457" key="HiddenNamespacesPopup/0.0.1536.824@0.0.1536.824" timestamp="1597226108127" />
-    <state x="490" y="135" width="540" height="553" key="NewPhpClassDialog" timestamp="1597312400685">
+    <state x="490" y="135" width="540" height="553" key="NewPhpClassDialog" timestamp="1597325943560">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="490" y="135" width="540" height="553" key="NewPhpClassDialog/0.0.1536.824@0.0.1536.824" timestamp="1597312400685" />
-    <state x="604" y="336" key="NewPhpFileDialog" timestamp="1597311193657">
+    <state x="490" y="135" width="540" height="553" key="NewPhpClassDialog/0.0.1536.824@0.0.1536.824" timestamp="1597325943560" />
+    <state x="604" y="336" key="NewPhpFileDialog" timestamp="1597322810264">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="604" y="336" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1597311193657" />
+    <state x="604" y="336" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1597322810264" />
     <state x="584" y="346" key="ReplaceDuplicatesPrompt" timestamp="1597136275411">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -319,21 +307,25 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1597149819140" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1597154590932">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1597316409926">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1597154590932" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1597316409926" />
     <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1597145434468">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1597145434468" />
+    <state x="478" y="11" width="579" height="801" key="find.popup" timestamp="1597317929181">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="478" y="11" width="579" height="801" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1597317929181" />
     <state x="569" y="314" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1597149594759">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="569" y="314" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1536.824@0.0.1536.824" timestamp="1597149594759" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1597299842010">
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1597317327225">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1597299842010" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1597317327225" />
   </component>
 </project>
