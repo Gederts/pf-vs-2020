@@ -1,15 +1,24 @@
 <?php
 
-
 namespace Project\Models;
 
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class UserModel
+/**
+ * @property int $id
+ * @property string $email
+ * @property string $name
+ */
+class QuestionModel extends Model
 {
-    public int $id;
+    protected $table = 'users';
+    public $timestamps = false;
+    protected $guarded = [];
 
-    public string $email;
-
-    public string $name;
+    public function quizAttempts(): HasMany
+    {
+        return $this->hasMany(UserQuizAttemptModel::class, 'user_id', 'id');
+    }
 
 }

@@ -1,12 +1,15 @@
 <?php
+
 namespace PF;
 class BowlingGame
 {
     private array $rolls = [];
+
     public function roll(int $score): void
     {
         $this->rolls[] = $score;
     }
+
     /**
      * @return int
      */
@@ -23,11 +26,15 @@ class BowlingGame
             if ($this->isSpare($roll)) {
                 $score += $this->getSpareBonus($roll);
             }
+            if ($frame == 9 && $this->isStrike($roll)) {
+
+            }
             $score += $this->getFrameAmount($roll);
             $roll += 2;
         }
         return $score;
     }
+
     /**
      * @param int $roll
      * @return int
@@ -36,6 +43,7 @@ class BowlingGame
     {
         return $this->rolls[$roll] + $this->rolls[$roll + 1];
     }
+
     /**
      * @param int $roll
      * @return bool
@@ -44,6 +52,7 @@ class BowlingGame
     {
         return $this->getFrameAmount($roll) === 10;
     }
+
     /**
      * @param int $roll
      * @return int
@@ -52,6 +61,7 @@ class BowlingGame
     {
         return $this->rolls[$roll + 2];
     }
+
     /**
      * @param int $roll
      * @return bool
@@ -60,6 +70,7 @@ class BowlingGame
     {
         return $this->rolls[$roll] === 10;
     }
+
     /**
      * @param int $roll
      * @return int

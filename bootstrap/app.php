@@ -1,0 +1,30 @@
+<?php
+
+use Dotenv\Dotenv;
+use Illuminate\Database\Capsule\Manager as Capsule;
+
+defined('PROJECT_ROOT') or define('PROJECT_ROOT', dirname(__DIR__));
+defined('PROJECT_VIEW_DIR') or define('PROJECT_VIEW_DIR', PROJECT_ROOT.'/resources/views');
+
+
+Dotenv::createImmutable(PROJECT_ROOT)->load();
+
+
+$capsule = new Capsule();
+$capsule->addConnection(
+    [
+        "driver" => "mysql",
+        "host" => env('DB_HOST'),
+        "database" => env('DB_NAME'),
+        "username" => env('DB_USER'),
+        "password" => env('DB_PASS'),
+    ]
+);
+
+//Make this Capsule instance available globally.
+$capsule->setAsGlobal();
+
+// Setup the Eloquent ORM.
+$capsule->bootEloquent();
+
+

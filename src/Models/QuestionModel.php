@@ -3,12 +3,33 @@
 
 namespace Project\Models;
 
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class QuestionModel
+/**
+ * @property int $id
+ * @property string $quiz_id
+ * @property string $title
+ */
+class QuestionModel extends Model
 {
-    public int $id;
-    public int $quizId;
-    public string $title;
+    protected $table = 'questions';
+    public $timestamps = false;
+    protected $guarded = [];
 
+    public function quiz(): BelongsTo
+    {
+        return $this->belongsTo(QuizModel::class);
+    }
 
+    public function answers(): HasMany
+    {
+        return $this->hasMany(AnswerModel::class, 'question_id', 'id');
+    }
+
+    public function userAnswers()
+    {
+        return $this->hasMany(UserQuizAttemptAnswerModel::class, 'question_id', 'id');
+    }
 }

@@ -1,5 +1,6 @@
 .idea
 vendor
+.env
 
 _/OopWorkshop/vendor
 _/TestWorkshop/vendor
