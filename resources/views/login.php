@@ -1,9 +1,20 @@
 <?php
 
 $this->title= 'Login';
+/**
+ *  * @var string $error
+ */
 ?>
 
+<?php if (!empty($error)): ?>
+    <div style="margin-top: 30px;" class="alert alert-danger" role="alert">
+        <ul class="mb-0">
 
+                <li class="float-none"><?= htmlspecialchars($error) ?></li>
+
+        </ul>
+    </div>
+<?php endif; ?>
 <form action="/login" method="POST">
     <div class="form-group">
         <label for="exampleInputEmail1">Email address</label>

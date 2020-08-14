@@ -2,9 +2,9 @@
 
 namespace Project\Traits;
 
-trait FromArrayTrait
+trait FromArrayTrait        //ielasa dataus no visām formām
 {
-    public static function fromarray(array $data = [])
+    public static function fromArray(array $data = [])
     {
         $class = new static();
 

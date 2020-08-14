@@ -8,7 +8,13 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 /**
  * @property int $id
  * @property string $email
+ * @property string $password
  * @property string $name
+ * @property bool $is_admin
+ * @property string $created_at
+ * @property string $updated_at
+ *
+ * @property UserQuizAttemptModel[] @quizAttempts
  */
 class UserModel extends Model
 {

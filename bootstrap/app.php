@@ -10,6 +10,7 @@ defined('PROJECT_LAYOUT_DIR') or define('PROJECT_LAYOUT_DIR', PROJECT_ROOT.'/res
 
 Dotenv::createImmutable(PROJECT_ROOT)->load();
 
+session_start();
 
 $capsule = new Capsule();
 $capsule->addConnection(
@@ -19,6 +20,8 @@ $capsule->addConnection(
         "database" => env('DB_NAME'),
         "username" => env('DB_USER'),
         "password" => env('DB_PASS'),
+        "charset" => "utf8",
+        "collation" => "utf8_unicode_ci",
     ]
 );
 

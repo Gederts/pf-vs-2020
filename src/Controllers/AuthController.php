@@ -4,8 +4,12 @@
 namespace Project\Controllers;
 
 
+use Project\Components\ActiveUser;
 use Project\Components\Controller;
+use Project\Exceptions\UserLoginException;
+use Project\Exceptions\UserRegistrationValidationException;
 use Project\Services\UserService;
+use Project\Structures\UserLoginItem;
 use Project\Structures\UserRegisterItem;
 
 class AuthController extends Controller
@@ -17,25 +21,59 @@ class AuthController extends Controller
         $this->userService = $userService ?? new UserService();
     }
 
-    public function login(): string
+    public function login(): ?string
     {
-        if($_SERVER['REQUEST_METHOD'] === 'POST'){
-            var_dump($_POST);
+        if(ActiveUser::isLoggedIn()){
+            return $this->redirect('/dashboard');
         }
-        return $this->view('login');
+        $loginItem = UserLoginItem::fromArray($_POST);
+        $error = '';
+        if($_SERVER['REQUEST_METHOD'] === 'POST'){
+
+            try {
+                $this->userService->signIn($loginItem);
+                return $this->redirect('/dashboard');
+            }catch (UserLoginException $exception){
+                $error = "kkas nav kartiba";
+            }
+
+
+        }
+        return $this->view('login', ['loginItem' => $loginItem, 'error'=>$error]);
     }
 
-    public function register()
+    public function register(): ?string //atgriež string vai null (gadijuma ja notiek redirects)
     {
-        if($_SERVER['REQUEST_METHOD'] === 'POST'){
-            $this->userService->signUp(UserRegisterItem::fromArray($_POST));
-            //var_dump($_POST);
+        if(ActiveUser::isLoggedIn()){
+            return $this->redirect('/dashboard');   //redirect atgriež null
         }
-        return $this->view('register');
+        $registerItem = UserRegisterItem::fromarray($_POST);
+        $errors = [];
+
+        if($_SERVER['REQUEST_METHOD'] === 'POST'){
+            try {
+                $this->userService->signUp($registerItem);
+
+                return $this->redirect('/');
+            }   catch(UserRegistrationValidationException $exception){
+                   $errors = $exception->errorMessages;
+            }
+        }
+        return $this->view('register', ['registerItem' => $registerItem, 'errors'=>$errors]);
     }
 
-    public function logout()
+    public function logout(): string
     {
-        return 'logout';
+        if($_SERVER['REQUEST_METHOD'] !== 'POST'){  //neļaus izlogoties ja nav post metode
+            return $this->redirect('/');
+        }
+        if(!ActiveUser::isLoggedIn()){
+            return $this->redirect('/login');
+        }
+
+        $this->userService->signOut();
+
+
+        return $this->redirect('/');
     }
 }

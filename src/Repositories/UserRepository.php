@@ -8,13 +8,30 @@ use Project\Models\UserModel;
 
 class UserRepository
 {
-    public function addUser(string $email, string $name):UserModel
+
+    public function checkIsEmailRegistered(string $email): bool
     {
-        
+        return UserModel::query()->where('email', '=', $email)->exists();
     }
 
-    public function getUser(string $email): ?UserModel
+    public function saveModel(UserModel $user): UserModel
     {
-        return null;
+        $user->save();
+
+        return $user;
     }
+
+    public function getUserByEmail(string $email): ?UserModel
+    {
+        /** @noinspection  PhpIncompatibleReturnTypeInspection */
+        return UserModel::query()->where('email', '=', $email)->first();
+    }
+
+
+    public function getAll(): array //atgriež UserModel masīvu jeb UserModel []
+    {
+        return UserModel::all()->all(); //pirmais all atgriež kolekciju. otrais all atgriež elementus
+    }
+
+
 }
