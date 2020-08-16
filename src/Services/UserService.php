@@ -4,7 +4,6 @@ declare(strict_types=1);
 namespace Project\Services;
 
 
-use http\Client\Curl\User;
 use Project\Components\Session;
 use Project\Exceptions\UserLoginException;
 use Project\Exceptions\UserRegistrationValidationException;
@@ -90,7 +89,7 @@ class UserService
         //ja ir kaut viens error, exception
     }
 
-    
+
     /**
      * @param UserLoginItem $item
      * @throws UserLoginException

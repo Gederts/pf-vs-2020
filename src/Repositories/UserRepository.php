@@ -27,6 +27,17 @@ class UserRepository
         return UserModel::query()->where('email', '=', $email)->first();
     }
 
+    public function getUserById(int $id): ?UserModel
+    {
+        /** @noinspection  PhpIncompatibleReturnTypeInspection */
+        return UserModel::query()->where('id', '=', $id)->first();
+    }
+
+    public function deleteUser(int $id): void
+    {
+        UserModel::destroy($id);
+    }
+
 
     public function getAll(): array //atgriež UserModel masīvu jeb UserModel []
     {

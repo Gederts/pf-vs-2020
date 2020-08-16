@@ -32,4 +32,14 @@ class AdminController extends Controller
         $quizzes = $this->quizRepository->getAll();
         return $this->view('admin/index', ['users' => $users, 'quizzes' => $quizzes]);
     }
+
+    public function deleteUser($id): ?string
+    {
+        if (!ActiveUser::getUser()->is_admin) {
+            return $this->redirect('/dashboard');
+        }
+        $this->userRepository->deleteUser($id);
+        return $this->redirect('/admin');
+
+    }
 }
