@@ -12,4 +12,12 @@ class ErrorController extends Controller
     {
         return $this->view('error/404');    //mape error /404.php
     }
+    public function forbidden(): string
+    {
+        return $this->view('error/403');
+    }
+    public function methodNotAllowed(): string
+    {
+        return $this->view('error/405');
+    }
 }

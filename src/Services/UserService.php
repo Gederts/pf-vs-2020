@@ -91,51 +91,25 @@ class UserService
 
 
     /**
-     * @param UserLoginItem $item
+     * @param UserLoginItem $loginItem
+     * @return UserModel
      * @throws UserLoginException
      */
-    public function signIn(UserLoginItem $item): ?UserModel
+    public function signIn(UserLoginItem $loginItem): UserModel
     {
-       /* $errors = [];
-
-        if(!$item->password || !$item->email){
-            $errors[] = 'Incorrect email or password';
+        if (!$loginItem->email || !$loginItem->password) {
+            throw new UserLoginException();
         }
-
-        if($errors){
-            $exception = new UserLoginException();
-            $exception->errorMessages = $errors;
-
-            throw $exception;
-        }*/
-        // 1. Validācija
-        // - parbaudīt vai nav tukši lauki
-        // --ja viens vai otrs lauks ir tukšs, meatm exception
-        // - meginam dabut lietotaju pec epsata
-        // - ja nav lietotaja, metam exception
-        // - Pārbaudam vai parole lietotajam ir pareiza (ar password_verify)
-        // - ja parole nav pareiza, metam exception
-        // - exception: oops your email or password is incorrect
-
-        // - reģenerējam sesijas id
-        //2. ieliekam sesijā aktīvā usera id
-
-
-
-
-
-        if($item->email && $item->password){
-            $user = $this->userRepository->getUserByEmail($item->email);
-            if(password_verify($item->password, $user->password)){
-                $this->session->regenerate();
-                $this->session->set(Session::KEY_USER_ID, (int)$user->id);
-                return $user;
-            }
-
+        $user = $this->userRepository->getUserByEmail($loginItem->email);
+        if (!$user) {
+            throw new UserLoginException();
         }
-        throw new UserLoginException();
-        return null;
-
+        if (!password_verify($loginItem->password, $user->password)) {
+            throw new UserLoginException();
+        }
+        $this->session->regenerate();
+        $this->session->set(Session::KEY_USER_ID, (int)$user->id);
+        return $user;
     }
 
     public function signOut(): void //glabasies sesijaa

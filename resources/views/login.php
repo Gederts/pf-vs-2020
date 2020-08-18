@@ -1,6 +1,8 @@
 <?php
 
-$this->title= 'Login';
+use Project\Components\Session;
+
+$this->title = 'Login';
 /**
  *  * @var string $error
  */
@@ -10,12 +12,15 @@ $this->title= 'Login';
     <div style="margin-top: 30px;" class="alert alert-danger" role="alert">
         <ul class="mb-0">
 
-                <li class="float-none"><?= htmlspecialchars($error) ?></li>
+            <li class="float-none"><?= htmlspecialchars($error) ?></li>
 
         </ul>
     </div>
 <?php endif; ?>
 <form action="/login" method="POST">
+  <!-- <div class="form-group">
+        <input class="form-control" type="text" name="csrf" value="<?= e(Session::getInstance()->getCsrf()); ?>"
+    </div>  -->
     <div class="form-group">
         <label for="exampleInputEmail1">Email address</label>
         <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">

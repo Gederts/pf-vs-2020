@@ -23,7 +23,9 @@ $this->title = 'Admin panel';
         <th>ID</th>
         <th>Email</th>
         <th>Name</th>
+        <th>Is admin?</th>
         <th>Created at</th>
+        <th></th>
         <th></th>
     </tr>
 
@@ -34,13 +36,27 @@ $this->title = 'Admin panel';
             <td><?= $user->id ?></td>
             <td><?= htmlspecialchars($user->email) //ja nav specialchars var injecet <script> ?></td>
             <td><?= htmlspecialchars($user->name) ?></td>
+            <td><?= ($user->is_admin) ?></td>
             <td><?= htmlspecialchars($user->created_at) ?></td>
             <td>
-                <form id="js--delete-form" action="/delete/user/<?= $user->id ?>" method="post">
-                    <input type="submit" name="" value="Delete"/>
+            <a class="btn btn-sm btn-success" href="/admin/view-user?id=<?= e($user->id); ?>">
+              View
+            </a>
+            </td>
+            <!--<td>
+                <form action="/edit/user/<?= $user->id ?>" method="post">
+                    <input type="submit" value="Promote/Demote"/>
                     <input type="hidden" name="identity" value="<?php echo $user->id; ?>" />
+
                 </form>
             </td>
+            <td>
+                <form action="/delete/user/<?= $user->id ?>" method="post">
+                    <input type="submit" value="Delete"/>
+                    <input type="hidden" name="identity" value="<?php echo $user->id; ?>" />
+
+                </form>
+            </td>-->
         </tr>
     <?php endforeach; ?>
     </tbody>
@@ -65,9 +81,3 @@ $this->title = 'Admin panel';
     <?php endforeach; ?>
     </tbody>
 </table>
-<script>
-    function onDeleteClicked() {
-        event.preventDefault();
-        document.getElementById('js--delete-form').submit();
-    }
-</script>

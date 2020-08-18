@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JS sandbox</title>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+<h1>JS sandbox</h1>
+<div id="app">
+    <h2>Current value: {{ value }}</h2>
+    <h2>Advanced value: {{ advancedValue }}</h2>
+
+    <div v-if="value % 10 === 0">
+        Dalās ar 10!!!!!
+    </div>
+    <div v-else-if="value % 2 === 0">
+        Pāra skaitlis!
+    </div>
+    <div v-else>
+        ???????
+    </div>
+
+    <div v-show="value % 10 === 0">
+        Dalās ar 10!!!!!
+    </div>
+    <div v-show="value % 10 !== 0 && value % 2 === 0">
+        Pāra skaitlis!
+    </div>
+    <div v-show="value % 10 !== 0 && value % 2 !== 0">
+        ???????
+    </div>
+
+    <button @click="addOne()">Add one</button>
+
+    <hr/>
+
+    <h2>Teksts: {{ text }}</h2>
+    <h2>Modificēts teksts: {{ modifiedText }}</h2>
+    <input type="text" v-model="text"/>
+
+    Teksts {{ isTextPalindrome ? 'ir' : 'nav' }} palindroms!
+
+    <hr/>
+
+    <h2>{{ array }}</h2>
+    <ol>
+        <li v-for="(value, index) in array" :key="index">
+            {{ value }}
+        </li>
+    </ol>
+    <input type="text" v-model="arrayInput">
+
+    <button @click="addToArray">Add</button>
+    <button @click="popArray">Pop</button>
+
+    <hr/>
+
+    <h1>{{ 'Teksts' | palindrome }}</h1>
+    <h1>{{ 1597665642 | fromUnixTime }}</h1>
+
+    <hr/>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr v-for="(object, id) in objects" :key="id">
+            <td>{{ object.id }}</td>
+            <td>{{ object.name }}</td>
+            <td>{{ object.email }}</td>
+            <td>
+                <button @click="editObject(id)">Edit</button>
+                <button @click="deleteObject(id)">Delete</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        filters: {
+            palindrome(string) {
+                return [...string].reverse().join('');
+            },
+            fromUnixTime(timestamp) {
+                return new Date(timestamp * 1000).toDateString();
+            }
+        },
+        data: {
+            value: 0,
+            text: "",
+            array: ['Foo', 'Bar', 'Baz'],
+            arrayInput: "",
+            objects: {
+                1: {id: 1, name: 'Foo', email: 'aa@ee.com'},
+                2: {id: 2, name: 'Bar', email: 'aa@ee.com'},
+                3: {id: 3, name: 'Baz', email: 'aa@ee.com'},
+            },
+        },
+        computed: {
+            advancedValue() {
+                return this.value * this.value;
+            },
+            modifiedText() {
+                return [...this.text].reverse().join('');
+            },
+            isTextPalindrome() {
+                return this.text === this.modifiedText;
+            }
+        },
+        watch: {
+            arrayInput() {
+                if (this.arrayInput.length > 10) {
+                    window.alert("Nav labi");
+                }
+            }
+        },
+        beforeCreate() {
+
+        },
+        created() {
+            //window.alert("Created!");
+        },
+        mounted() {
+            //window.alert("Mounted!");
+        },
+        methods: {
+            addOne() {
+                console.log("Add one clicked!");
+                this.value++;
+            },
+            addToArray() {
+                if (!this.arrayInput.length) {
+                    return;
+                }
+
+                this.array.push(this.arrayInput);
+                this.arrayInput = "";
+            },
+            popArray() {
+                this.array.pop();
+            },
+            editObject(id) {
+                // this.objects[id].name = window.prompt("Enter the new name for the object with name " + newObject.name);
+
+                const newObject = {};
+                Object.assign(newObject, this.objects[id]);
+
+                newObject.name = window.prompt("Enter the new name for the object with name " + newObject.name);
+
+                const newObjects = {};
+                Object.assign(newObjects, this.objects);
+                newObjects[id] = newObject;
+
+                this.objects = newObjects;
+            },
+            deleteObject(id) {
+                const newObjects = {};
+                Object.assign(newObjects, this.objects);
+                delete newObjects[id];
+
+                this.objects = newObjects;
+            }
+        }
+    });
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

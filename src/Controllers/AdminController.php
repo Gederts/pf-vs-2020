@@ -6,6 +6,9 @@ namespace Project\Controllers;
 
 use Project\Components\ActiveUser;
 use Project\Components\Controller;
+use Project\Components\Session;
+use Project\Exceptions\Http\HttpForbiddenException;
+use Project\Models\UserModel;
 use Project\Repositories\QuizRepository;
 use Project\Repositories\UserRepository;
 
@@ -23,23 +26,127 @@ class AdminController extends Controller
         $this->userRepository = $userRepository ?? new UserRepository();
         $this->quizRepository = $quizRepository ?? new QuizRepository();
     }
+    /**
+     * @return string|null
+     * @throws HttpForbiddenException
+     */
     public function index(): ?string
     {
         if (!ActiveUser::getUser()->is_admin) {
-            return $this->redirect('/dashboard');
+            throw new HttpForbiddenException();
         }
         $users = $this->userRepository->getAll();
         $quizzes = $this->quizRepository->getAll();
         return $this->view('admin/index', ['users' => $users, 'quizzes' => $quizzes]);
     }
-
-    public function deleteUser($id): ?string
+    /**
+     * @return string|null
+     * @throws HttpForbiddenException
+     */
+    public function viewUser(): ?string
     {
         if (!ActiveUser::getUser()->is_admin) {
-            return $this->redirect('/dashboard');
+            throw new HttpForbiddenException();
         }
-        $this->userRepository->deleteUser($id);
-        return $this->redirect('/admin');
-
+        $id = (int)($_GET['id'] ?? null);
+        if (!$id) {
+            Session::getInstance()->setErrorMessage("User ID missing");
+            return $this->redirect('/admin');
+        }
+        // TODO: Pārcelt uz atbilstošu UserRepository metodi
+        $user = UserModel::query()->where('id', '=', $id)->first();
+        if (!$user) {
+            Session::getInstance()->setErrorMessage("User with ID '{$id}' not found");
+            return $this->redirect('/admin');
+        }
+        return $this->view('admin/view-user', ['user' => $user]);
+    }
+//  My Way
+//
+//    public function editUser($id): ?string
+//    {
+//        if($_SERVER['REQUEST_METHOD'] !== 'POST'){  //neļaus izlogoties ja nav post metode
+//            return $this->redirect('/');
+//        }
+//        if (!ActiveUser::getUser()->is_admin) {
+//            return $this->redirect('/dashboard');
+//        }
+//        $this->userRepository->changeUserPrivilege($id);
+//        return $this->redirect('/admin');
+//    }
+    public function toggleUserAdmin(): ?string
+    {
+        if (!ActiveUser::getUser()->is_admin) {
+            throw new HttpForbiddenException();
+        }
+        $id = (int)($_POST['id'] ?? null);
+        // TODO: Pārcelt visu no [start] līdz [end] uz servisu.
+        // TODO: Visam starp start un end vajadzētu būt try catch blokā
+        // TODO: Repozitoriju loģiku (kur ir vaicājums lietotāja atrašanai vai izmaiņas lietotāja modelim) pārcelt uz UserRepository::getUserById, UserRepository::saveModel un izsaukt caur servisu
+        // TODO: Ja ir kāds errors (piem. userId === id), metam AdminException ar ziņu iekšā
+        // TODO: Tad kļūdas ziņojumu iestatam sesijā caur kontrolieri
+        // TODO: Citādāk (ja viss ok), izvadam success message arī caur sesiju un taisam redirect atpakaļ
+        // TODO: [start]
+        if (ActiveUser::getUserId() === $id) {
+            Session::getInstance()->setErrorMessage("You can't toggle your own admin status!");
+            return $this->redirect($_SERVER['HTTP_REFERER']);
+        }
+        /** @var UserModel $user */
+        $user = UserModel::query()->where('id', '=', $id)->first();
+        if (!$user) {
+            Session::getInstance()->setErrorMessage("User not found");
+        } else {
+            $user->is_admin = !$user->is_admin;
+            $user->save();
+            Session::getInstance()->setSuccessMessage("Admin status successfully toggled");
+        }
+        // TODO: [end]
+        return $this->redirect($_SERVER['HTTP_REFERER']);
+    }
+    /**
+     * @return string|null
+     * @throws HttpForbiddenException
+     */
+    //    public function deleteUser($id): ?string
+//    {
+//        if($_SERVER['REQUEST_METHOD'] !== 'POST'){  //neļaus izlogoties ja nav post metode
+//            return $this->redirect('/');
+//        }
+//        if (!ActiveUser::getUser()->is_admin) {
+//            return $this->redirect('/dashboard');
+//        }
+//        $this->userRepository->deleteUser($id);
+//        return $this->redirect('/admin');
+//    }
+    public function deleteUser(): ?string
+    {
+        if (!ActiveUser::getUser()->is_admin) {
+            throw new HttpForbiddenException();
+        }
+        $id = (int)($_POST['id'] ?? null);
+        // TODO: Pārcelt visu no [start] līdz [end] uz servisu.
+        // TODO: Visam starp start un end vajadzētu būt try catch blokā
+        // TODO: Repozitoriju loģiku (kur ir vaicājums lietotāja atrašanai vai izmaiņas lietotāja modelim) pārcelt uz UserRepository::getUserById, UserRepository::saveModel un izsaukt caur servisu
+        // TODO: Ja ir kāds errors (piem. userId === id), metam AdminException ar ziņu iekšā
+        // TODO: Tad kļūdas ziņojumu iestatam sesijā caur kontrolieri
+        // TODO: Citādāk (ja viss ok), izvadam success message arī caur sesiju un taisam redirect atpakaļ
+        // TODO: [start]
+        if (ActiveUser::getUserId() === $id) {
+            Session::getInstance()->setErrorMessage("You can't delete yourself!");
+            return $this->redirect($_SERVER['HTTP_REFERER']);
+        }
+        /** @var UserModel $user */
+        $user = UserModel::query()->where('id', '=', $id)->first();
+        if (!$user) {
+            Session::getInstance()->setErrorMessage("User not found");
+        } else {
+            $user->email = null;
+            $user->password = null;
+            $user->name = 'Former user';
+            $user->save();
+            Session::getInstance()->setSuccessMessage("User successfully deleted");
+        }
+        // TODO: [end]
+        return $this->redirect($_SERVER['HTTP_REFERER']);
     }
 }

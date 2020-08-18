@@ -1,6 +1,7 @@
 .idea
 vendor
 .env
+node_modules
 
 _/OopWorkshop/vendor
 _/TestWorkshop/vendor

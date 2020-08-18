@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Vue.js TODO app</title>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+<h1>Vue.js TODO app</h1>
+<div id="app">
+    <div v-for="(todoItem, index) in todoItems" :key="index">
+        <input type="checkbox" v-model="todoItem.isDone"/>
+
+        <strike v-if="todoItem.isDone">
+            {{ todoItem.title }}
+        </strike>
+        <template v-else>
+            {{ todoItem.title }}
+        </template>
+
+        <span v-bind:style="getItemStyle(index)">
+            {{ todoItem.title }}
+        </span>
+
+        <button @click="editItem(index)">Edit</button>
+        <button @click="deleteItem(index)">Delete</button>
+    </div>
+
+    <button @click="addItem()">Add new</button>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            todoItems: [
+                {title: "Do something", isDone: false},
+                {title: "Do something else", isDone: false},
+            ],
+        },
+        computed: {},
+        methods: {
+            getItemStyle(index) {
+                const item = this.todoItems[index];
+                return {
+                    textDecoration: item.isDone ? 'line-through' : '',
+                }
+            },
+            addItem() {
+                const title = window.prompt("Enter the title");
+
+                const newItems = [...this.todoItems];
+                newItems.push({title: title, isDone: false});
+
+                this.todoItems = newItems;
+            },
+            editItem(index) {
+                const item = Object.assign({}, this.todoItems[index]);
+                item.title = window.prompt("Enter the new title");
+                const newItems = [...this.todoItems];
+                newItems[index] = item;
+
+                this.todoItems = newItems;
+            },
+            deleteItem(index) {
+                const newItems = [...this.todoItems];
+                newItems.splice(index, 1);
+
+                this.todoItems = newItems;
+            }
+        }
+    });
+</script>
+</body>
+</html>
+
+
+

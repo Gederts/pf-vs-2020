@@ -9,16 +9,50 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="24663259-532b-4ea6-8fc1-e2d0fe27ba05" name="Default Changelist" comment="added Repositories, Models, Services">
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/indexTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_/vue/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_/vue/todo.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mix-manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/app.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/vue-components/Quiz/QuizMain.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/vue-components/Quiz/components/QuizQuestions.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/vue-components/Quiz/components/QuizResults.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/vue-components/Quiz/components/QuizSelect.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/vue-components/Quiz/quiz.structures.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/styles/app.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/view-user.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/error/403.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/error/405.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controllers/QuizRpcController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Exceptions/AdminValidationException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Exceptions/Http/BaseHttpException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Exceptions/Http/HttpForbiddenException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Exceptions/Http/HttpMethodNotAllowedException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Exceptions/Http/HttpNotFoundException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Interfaces/RpcResponseInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Structures/AnswerStructure.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Structures/QuestionStructure.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Structures/QuizStructure.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/pf-vs-2020.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pf-vs-2020.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/app.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/layouts/default.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/layouts/default.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/indexTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/error/404.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/error/404.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/login.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Route.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Route.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Router.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Session.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Session.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/AdminController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/AuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/ErrorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/ErrorController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Repositories/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repositories/UserRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Services/UserService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/UserService.php" afterDir="false" />
     </list>
@@ -30,6 +64,13 @@
   <component name="ComposerSettings" doNotAsk="true">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Vue Single File Component" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -126,7 +167,9 @@
     <property name="database.data.extractors.current.id" value="SQL Inserts" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../wamp64/www/myshop" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2020.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -153,7 +196,10 @@
       <workItem from="1597296978857" duration="28072000" />
       <workItem from="1597384046640" duration="27117000" />
       <workItem from="1597554941734" duration="5776000" />
-      <workItem from="1597561966337" duration="18339000" />
+      <workItem from="1597561966337" duration="25492000" />
+      <workItem from="1597643489607" duration="22358000" />
+      <workItem from="1597729809256" duration="19357000" />
+      <workItem from="1597771892495" duration="4186000" />
     </task>
     <task id="LOCAL-00001" summary="gitignore">
       <created>1597149682193</created>
@@ -197,7 +243,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597413190841</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Added deleteUser functionality for admins">
+      <created>1597596179987</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1597596179987</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -253,7 +306,8 @@
     <MESSAGE value="Added Basic MVC structure" />
     <MESSAGE value="minor improvements" />
     <MESSAGE value="basic mvc login structure" />
-    <option name="LAST_COMMIT_MESSAGE" value="basic mvc login structure" />
+    <MESSAGE value="Added deleteUser functionality for admins" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added deleteUser functionality for admins" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="71" key="#Intentions" timestamp="1597307241670">
@@ -264,6 +318,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="512" y="236" key="#Notifications/0.0.1536.824@0.0.1536.824" timestamp="1597061576158" />
+    <state x="361" y="53" key="#Plugins" timestamp="1597745140580">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="53" key="#Plugins/0.0.1536.824@0.0.1536.824" timestamp="1597745140580" />
     <state x="466" y="117" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1597226079249">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -272,10 +330,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="518" y="214" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1597231646295" />
-    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser" timestamp="1597411091691">
+    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser" timestamp="1597756960679">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1597411091691" />
+    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1597756960678" />
     <state x="869" y="187" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1597411411041">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -308,10 +366,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="189" height="457" key="HiddenNamespacesPopup/0.0.1536.824@0.0.1536.824" timestamp="1597226108127" />
-    <state x="996" y="200" width="540" height="553" key="NewPhpClassDialog" timestamp="1597410672544">
+    <state x="996" y="200" width="540" height="553" key="NewPhpClassDialog" timestamp="1597758307032">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="996" y="200" width="540" height="553" key="NewPhpClassDialog/0.0.1536.824@0.0.1536.824" timestamp="1597410672544" />
+    <state x="996" y="200" width="540" height="553" key="NewPhpClassDialog/0.0.1536.824@0.0.1536.824" timestamp="1597758307032" />
     <state x="604" y="336" key="NewPhpFileDialog" timestamp="1597410725684">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -324,10 +382,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1597149819140" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1597413194058">
+    <state width="574" height="446" key="SwitcherDM" timestamp="1597653500507">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1597413194058" />
+    <state width="574" height="446" key="SwitcherDM/0.0.1536.824@0.0.1536.824" timestamp="1597653500507" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1597596184257">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1597596184257" />
     <state x="499" y="217" key="com.intellij.database.dbimport.ImportUtil.ChooseTargetDialog" timestamp="1597399464743">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -348,9 +410,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="611" y="173" key="refactoring.ChangeSignatureDialog/0.0.1536.824@0.0.1536.824" timestamp="1597574925469" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1597559317447">
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1597745128542">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1597559317447" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1597745128542" />
   </component>
 </project>

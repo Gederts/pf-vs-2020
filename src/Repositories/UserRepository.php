@@ -38,6 +38,16 @@ class UserRepository
         UserModel::destroy($id);
     }
 
+    public function changeUserPrivilege(int $id): void
+    {
+        if (UserModel::query()->where('id', '=', $id)->first()->is_admin === 0){
+            UserModel::query()->where('id', '=', $id)->first()->update(['is_admin' => '1']);
+        }
+        else {
+            UserModel::query()->where('id', '=', $id)->first()->update(['is_admin' => '0']);
+        }
+    }
+
 
     public function getAll(): array //atgriež UserModel masīvu jeb UserModel []
     {

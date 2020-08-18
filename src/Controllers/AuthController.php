@@ -29,12 +29,11 @@ class AuthController extends Controller
         $loginItem = UserLoginItem::fromArray($_POST);
         $error = '';
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
-
             try {
                 $this->userService->signIn($loginItem);
                 return $this->redirect('/dashboard');
             }catch (UserLoginException $exception){
-                $error = "kkas nav kartiba";
+                $error = "Credentials don't match our records!";
             }
 
 
