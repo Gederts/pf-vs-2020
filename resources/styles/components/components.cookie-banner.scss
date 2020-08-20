@@ -1,0 +1,19 @@
+.cookie-banner {
+  @extend .alert;
+  @extend .alert-success;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__text {
+    font-weight: bold;
+    &--link {
+      text-decoration: underline;
+    }
+  }
+  &__button {
+    @extend .btn;
+    @extend .btn-primary;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+}

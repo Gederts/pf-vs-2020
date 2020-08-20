@@ -17,7 +17,7 @@ $this->title = 'Admin panel';
 <h1>Admin Panel</h1>
 
 <h2>All users</h2>
-<table class="table">
+<table class="table tabula">
     <thead>
     <tr>
         <th>ID</th>
@@ -26,15 +26,14 @@ $this->title = 'Admin panel';
         <th>Is admin?</th>
         <th>Created at</th>
         <th></th>
-        <th></th>
     </tr>
 
     </thead>
-    <tbody>
+
     <?php foreach ($users as $user): ?>
         <tr>
             <td><?= $user->id ?></td>
-            <td><?= htmlspecialchars($user->email) //ja nav specialchars var injecet <script> ?></td>
+            <td><?= htmlspecialchars($user->email) ?></td>
             <td><?= htmlspecialchars($user->name) ?></td>
             <td><?= ($user->is_admin) ?></td>
             <td><?= htmlspecialchars($user->created_at) ?></td>
@@ -43,23 +42,10 @@ $this->title = 'Admin panel';
               View
             </a>
             </td>
-            <!--<td>
-                <form action="/edit/user/<?= $user->id ?>" method="post">
-                    <input type="submit" value="Promote/Demote"/>
-                    <input type="hidden" name="identity" value="<?php echo $user->id; ?>" />
 
-                </form>
-            </td>
-            <td>
-                <form action="/delete/user/<?= $user->id ?>" method="post">
-                    <input type="submit" value="Delete"/>
-                    <input type="hidden" name="identity" value="<?php echo $user->id; ?>" />
-
-                </form>
-            </td>-->
         </tr>
     <?php endforeach; ?>
-    </tbody>
+
 </table>
 <h2>All quizzes</h2>
 <table class="table">
@@ -67,8 +53,8 @@ $this->title = 'Admin panel';
     <tr>
         <th>ID</th>
         <th>Name</th>
-        <th>Question count
-        </th?
+        <th>Question count</th>
+        <th></th>
     </tr>
     </thead>
     <tbody>
@@ -77,6 +63,11 @@ $this->title = 'Admin panel';
             <td><?= $quiz->id ?></td>
             <td><?= htmlspecialchars($quiz->name) ?></td>
             <td><?= $quiz->questions()->count() ?></td>
+            <td>
+              <a class="btn btn-sm btn-success" href="/admin/view-quiz?id=<?= e($quiz->id); ?>">
+               View
+               </a>
+            </td>
         </tr>
     <?php endforeach; ?>
     </tbody>

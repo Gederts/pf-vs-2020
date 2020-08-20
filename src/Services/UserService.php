@@ -5,6 +5,7 @@ namespace Project\Services;
 
 
 use Project\Components\Session;
+use Project\Exceptions\AdminValidationException;
 use Project\Exceptions\UserLoginException;
 use Project\Exceptions\UserRegistrationValidationException;
 use Project\Models\UserModel;
@@ -56,23 +57,22 @@ class UserService
     public function validateRegisterItemOrFail(UserRegisterItem $item): void
     {
         $errors = [];
-        if (!filter_var($item->email, FILTER_VALIDATE_EMAIL)){   //FILTER_VALIDATE_EMAIL ir php builtin funkcija
+        if (!filter_var($item->email, FILTER_VALIDATE_EMAIL)) {   //FILTER_VALIDATE_EMAIL ir php builtin funkcija
             $errors[] = 'Please enter a valid email';
         }
         if ($this->userRepository->checkIsEmailRegistered($item->email)) {
             $errors[] = 'User with this email is already registered!';
         }
-        if(!$item->password){
+        if (!$item->password) {
             $errors[] = 'Please enter the password';
+        } elseif (mb_strlen($item->password) < 6 || strlen($item->password) > 72) {   //password hash atbaalsta max 72 simbolus
+            $errors[] = 'Password must be in reasonable length';
         }
-        elseif(mb_strlen($item->password) < 6 || strlen($item->password) > 72)  {   //password hash atbaalsta max 72 simbolus
-          $errors[] = 'Password must be in reasonable length';
-        }
-        if (!$item->name){
+        if (!$item->name) {
             $errors[] = 'Please enter your name';
         }
 
-        if($errors){
+        if ($errors) {
             $exception = new UserRegistrationValidationException();
             $exception->errorMessages = $errors;
 
@@ -116,4 +116,45 @@ class UserService
     {
         $this->session->destroy();
     }
+
+    public function makeAdmin(int $id, int $activeUserId): void
+    {
+        if ($activeUserId === $id) {
+            Session::getInstance()->setErrorMessage("You can't toggle your own admin status!");
+        } else {
+            /** @var UserModel $user */
+            $user = $this->userRepository->getUserById($id);
+            if (!$user) {
+                Session::getInstance()->setErrorMessage("User not found");
+            } else if ($user->email === null) {
+                Session::getInstance()->setErrorMessage("This user has been deleted");
+            } else {
+                $user->is_admin = !$user->is_admin;
+                $this->userRepository->saveModel($user);
+                Session::getInstance()->setSuccessMessage("Admin status successfully toggled");
+            }
+        }
+    }
+
+    public function deleteUser(int $id, int $activeUserId): void
+    {
+        if ($activeUserId === $id) {
+            Session::getInstance()->setErrorMessage("You can't delete yourself!");
+        }
+        /** @var UserModel $user */
+        $user = $this->userRepository->getUserById($id);
+        if (!$user) {
+            Session::getInstance()->setErrorMessage("User not found");
+        } else if ($user->email === null && $user->$id === null) {
+            Session::getInstance()->setErrorMessage("User has already been deleted");
+        } else {
+            $user->email = null;
+            $user->password = null;
+            $user->is_admin = null;
+            $user->name = 'Former user';
+            $this->userRepository->saveModel($user);
+            Session::getInstance()->setSuccessMessage("User successfully deleted");
+        }
+    }
+
 }

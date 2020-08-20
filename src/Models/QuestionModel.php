@@ -9,14 +9,17 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
  * @property int $id
- * @property string $quiz_id
+ * @property int $quiz_id
  * @property string $title
+ *
+ * @property AnswerModel[] $answers
  */
 class QuestionModel extends Model
 {
     protected $table = 'questions';
     public $timestamps = false;
     protected $guarded = [];
+
 
     public function quiz(): BelongsTo
     {

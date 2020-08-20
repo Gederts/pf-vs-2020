@@ -3,7 +3,7 @@
 
 use Project\Components\Session;
 
-require_once '../vendor/autoload.php';
+
 require_once '../bootstrap/app.php';
 
 $routes = require_once '../routes.php'; //routes.php atgriež routes masivu no routes.php

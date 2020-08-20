@@ -35,6 +35,6 @@ class UserQuizAttemptModel extends Model
 
     public function userAnswers(): HasMany
     {
-        return $this->hasMany(UserQuizAttemptAnswerModel::class);
+        return $this->hasMany(UserQuizAttemptAnswerModel::class, 'attempt_id', 'id');
     }
 }

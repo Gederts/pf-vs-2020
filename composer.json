@@ -4,16 +4,15 @@
     "illuminate/database": "^7.22",
     "robmorgan/phinx": "^0.12.3",
     "vlucas/phpdotenv": "^5.1",
-    "ext-json": "*",
-    "ext-mysql_xdevapi": "*",
-    "ext-http": "*"
+    "mockery/mockery": "^1.4"
   },
   "require-dev": {
     "phpunit/phpunit": "^9.3.5"
   },
   "autoload": {
     "psr-4": {
-      "Project\\": "src/"
+      "Project\\": "src/",
+      "Tests\\": "tests/"
     }
   }
 }

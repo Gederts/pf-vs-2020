@@ -20,7 +20,6 @@ use Project\Models\UserModel;
     <title>
        <?= $this->title ?>
     </title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="/assets/app.css">
     <script>
       window.csrf = "<?= Session::getInstance()->getCsrf(); ?>";
@@ -51,25 +50,26 @@ use Project\Models\UserModel;
 </style>
 <body>
     <nav>
-        <ul style="display: flex; justify-content: center; background-color: #333; margin: 0;">
-            <li><a style="text-decoration: none;" href="/">Quiz</a></li>
+        <ul>
+            <li><a href="/">Quiz</a></li>
             <?php if(!ActiveUser::isLoggedIn()): ?>
-            <li><a style="text-decoration: none;" href="/login">Log in</a></li>
-            <li><a style="text-decoration: none;"  href="/register">Register</a></li>
+            <li><a href="/login">Log in</a></li>
+            <li><a href="/register">Register</a></li>
             <?php endif; ?>
             <?php if(ActiveUser::isLoggedIn()): ?>
-            <li><a style="text-decoration: none;" href="/dashboard">Dashboard</a></li>
+            <li><a href="/my-results">My results</a></li>
+            <li><a href="/dashboard">Dashboard</a></li>
                 <?php if (ActiveUser::getUser()->is_admin): ?>
                     <li class="nav-item">
-                        <a style="text-decoration: none;" href="/admin">Admin</a>
+                        <a href="/admin">Admin</a>
                     </li>
                 <?php endif; ?>
-            <li><a style="text-decoration: none;" href="/logout" onclick="onLogoutClicked()">Logout</a></li>
+            <li><a href="/logout" onclick="onLogoutClicked()">Logout</a></li>
 
             <form id="js--logout-form" action="/logout" method="post">
                 <input type="hidden" name="csrf" value="<?= e(Session::getInstance()->getCsrf()); ?>">
             </form>
-            <li style="color: white;   margin-left: 50px;" class="navbar">Your username is '<?php echo htmlspecialchars(ActiveUser::getUser()->name); ?>'</li>
+            <li class="navbar user">Your username is <?php echo htmlspecialchars(ActiveUser::getUser()->name); ?></li>
             <?php endif; ?>
         </ul>
     </nav>

@@ -4,6 +4,7 @@ FROM php:7.4-fpm as base
 
 RUN docker-php-ext-install opcache
 
+
 RUN apt update && apt install -y git zip
 
 # Install Laravel dependencies

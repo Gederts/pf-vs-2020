@@ -25,6 +25,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/instantiator/docs" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/instantiator/src" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/graham-campbell" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/hamcrest/hamcrest-php" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/illuminate/container" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/illuminate/contracts" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/illuminate/contracts/Auth/Access" />
@@ -67,6 +68,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/illuminate/database/Schema/Grammars" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/illuminate/support" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/illuminate/support/Testing" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/mockery/mockery" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/myclabs/deep-copy" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/myclabs/deep-copy/src" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/nesbot" />
