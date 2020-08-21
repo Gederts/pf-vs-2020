@@ -1,5 +1,11 @@
 <template>
   <div>
+    Your progress (QuizQuestions.vue iesāku bet nepabeidzu (Progress Bar))
+    <div class="progress-bar-container">
+      <div class="progress-bar" :style="{width:100 + '%'}">
+        100%
+      </div>
+    </div>
     <h1>Thanks, {{userName}}!</h1>
 
 
@@ -50,9 +56,7 @@ export default {
         this.isLoading = false;
       });
     },
-    // onNextClicked(){
-    //   this.onBackToStartClicked();
-    // },
+
     onBackToStartClicked(){
       if (this.isLoading){
         return;

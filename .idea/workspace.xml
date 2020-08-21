@@ -9,54 +9,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="24663259-532b-4ea6-8fc1-e2d0fe27ba05" name="Default Changelist" comment="added Repositories, Models, Services">
-      <change afterPath="$PROJECT_DIR$/.phpunit.result.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/phpunit.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/styles/abstracts/abstracts.variables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/styles/components/components.cookie-banner.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/styles/components/components.main.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/view-quiz.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/my-results.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repositories/AnswerRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repositories/QuestionRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repositories/UserQuizAttemptAnswerRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repositories/UserQuizAttemptRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/UserServiceTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.docker/images/php/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/images/php/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/pf-vs-2020.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pf-vs-2020.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bootstrap/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/app.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/seeds/QuizSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/db/seeds/QuizSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/assets/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/assets/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/vue-components/Quiz/QuizMain.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/vue-components/Quiz/QuizMain.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/vue-components/Quiz/components/QuizQuestions.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/vue-components/Quiz/components/QuizQuestions.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/vue-components/Quiz/components/QuizResults.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/vue-components/Quiz/components/QuizResults.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/vue-components/Quiz/components/QuizSelect.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/vue-components/Quiz/components/QuizSelect.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/vue-components/Quiz/quiz.structures.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/vue-components/Quiz/quiz.structures.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/layouts/default.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/layouts/default.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/styles/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/styles/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/register.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Router.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Session.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Session.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/IndexController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controllers/QuizRpcController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/QuizRpcController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Exceptions/AdminValidationException.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Exceptions/AdminValidationException.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/QuestionModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/QuestionModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/UserQuizAttemptModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/UserQuizAttemptModel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Repositories/QuizRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repositories/QuizRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repositories/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repositories/UserRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Services/QuizService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/QuizService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/UserService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/UserService.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -209,7 +172,8 @@
       <workItem from="1597815790508" duration="26039000" />
       <workItem from="1597854488049" duration="5182000" />
       <workItem from="1597902300119" duration="24990000" />
-      <workItem from="1597937328703" duration="14750000" />
+      <workItem from="1597937328703" duration="15219000" />
+      <workItem from="1597988854938" duration="6336000" />
     </task>
     <task id="LOCAL-00001" summary="gitignore">
       <created>1597149682193</created>
@@ -267,7 +231,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597776235442</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Improved structure, added css styles, added my-results.php view">
+      <created>1597952416972</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1597952416972</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -325,7 +296,8 @@
     <MESSAGE value="basic mvc login structure" />
     <MESSAGE value="Added deleteUser functionality for admins" />
     <MESSAGE value="HomeWork before refactor" />
-    <option name="LAST_COMMIT_MESSAGE" value="HomeWork before refactor" />
+    <MESSAGE value="Improved structure, added css styles, added my-results.php view" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improved structure, added css styles, added my-results.php view" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="71" key="#Intentions" timestamp="1597307241670">
@@ -404,10 +376,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="574" height="446" key="SwitcherDM/0.0.1536.824@0.0.1536.824" timestamp="1597653500507" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1597776239984">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1597952421499">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1597776239984" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1597952421499" />
     <state x="698" y="70" key="com.intellij.database.dbimport.ImportDialog" timestamp="1597906709975">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

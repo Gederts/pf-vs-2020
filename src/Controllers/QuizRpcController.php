@@ -7,7 +7,7 @@ namespace Project\Controllers;
 use Project\Components\ActiveUser;
 use Project\Components\Controller;
 use Project\Services\QuizService;
-use Project\Structures\QuizStructure;
+
 
 class QuizRpcController extends Controller
 {
@@ -80,5 +80,19 @@ class QuizRpcController extends Controller
             ]
         );
     }
+
+/*    public function getQuestionCount(): string  //iespējams nepareizi padevu post id no Vue
+    {
+        $quizId = (int)($_POST['quizId'] ?? null);
+        $questionCount = $this->quizService->getQuestionCount($quizId);
+
+
+        return json_encode(
+            [
+                'success' => true,
+                'questionCount' => $questionCount,
+            ]
+        );
+    }*/
 
 }

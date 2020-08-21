@@ -11,7 +11,7 @@ use Project\Models\QuizModel;
 
 class QuizRepository
 {
-    public function addQuiz(int $id, string $name): QuizModel
+    /*public function addQuiz(int $id, string $name): QuizModel
     {
 
     }
@@ -19,7 +19,7 @@ class QuizRepository
     public function addQuizQuestion(int $id, int $quizId, string $title): QuestionModel
     {
 
-    }
+    }*/
 
     public function getAll(): array //atgriež UserModel masīvu jeb UserModel []
     {

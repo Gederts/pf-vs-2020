@@ -2064,11 +2064,21 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
+      // max: 0,
+      // items: [],
+      // msg: 'added',
       isLoading: false,
 
       /** @type {QuestionStructure} */
@@ -2078,7 +2088,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     };
   },
   created: function created() {
-    this.getNextQuestion();
+    this.getNextQuestion(); // this.getQuestionCount()
   },
   methods: {
     getNextQuestion: function getNextQuestion() {
@@ -2141,6 +2151,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 return _context2.abrupt("return");
 
               case 2:
+                // this.items.push(this.msg);
                 formData = new FormData(); //formData.append('csrf', window.csrf());
 
                 formData.append('answerId', _this2.selectedAnswerId);
@@ -2169,6 +2180,21 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     onLastQuestionSubmitted: function onLastQuestionSubmitted() {
       this.$emit('last-question-submitted');
     }
+    /* async getQuestionCount(){
+       const formData = new FormData();
+       let quizId = this.currentQuestion.quizId;
+       formData.append('quizId', quizId);
+         this.isLoading = true;
+       await Axios.post('/quiz-rpc/get-question-count', formData).then((response) => {
+         if(!response.data.questionCount){
+           return;
+         }
+           this.max = response.data.questionCount; // iespējams, nepareiza pieeja
+       }).finally(() => {
+         this.isLoading = false;
+       });
+       },*/
+
   }
 });
 
@@ -2194,6 +2220,12 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2261,9 +2293,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }, _callee);
       }))();
     },
-    // onNextClicked(){
-    //   this.onBackToStartClicked();
-    // },
     onBackToStartClicked: function onBackToStartClicked() {
       if (this.isLoading) {
         return;
@@ -3727,7 +3756,7 @@ var render = function() {
                   },
                   [
                     _vm._v(
-                      "\n\n          " + _vm._s(answer.title) + "\n       "
+                      "\n\n            " + _vm._s(answer.title) + "\n         "
                     )
                   ]
                 )
@@ -3750,9 +3779,9 @@ var render = function() {
         },
         [
           _vm._v(
-            "\n    " +
+            "\n      " +
               _vm._s(_vm.isLastQuestion ? "Finish quiz" : "NextQuestion") +
-              "\n\n  "
+              "\n\n    "
           )
         ]
       )
@@ -3783,6 +3812,15 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
+    _vm._v(
+      "\n  Your progress (QuizQuestions.vue iesāku bet nepabeidzu (Progress Bar))\n  "
+    ),
+    _c("div", { staticClass: "progress-bar-container" }, [
+      _c("div", { staticClass: "progress-bar", style: { width: 100 + "%" } }, [
+        _vm._v("\n      100%\n    ")
+      ])
+    ]),
+    _vm._v(" "),
     _c("h1", [_vm._v("Thanks, " + _vm._s(_vm.userName) + "!")]),
     _vm._v(" "),
     _vm.isLoading

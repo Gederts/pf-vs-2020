@@ -2,10 +2,10 @@
 @import "abstracts/abstracts.variables";
 @import "components/components.main";
 $krasina : #7cbfbb;
-
+$main : #222;
 body {
   margin:0;
-  background:#222;
+  background:$main;
   color:#fff;
   font-family:sans-serif;
 }
@@ -28,7 +28,7 @@ li {
 
   a:hover {
     text-decoration: none;
-    color: #222;
+    color: $main;
   }
 }
 .user {
@@ -49,7 +49,7 @@ select {
 }
 thead{
   color: white;
-  background: #222;
+  background: $main;
 }
 tbody tr:hover {background-color: $krasina;}
 .button-cyan, .btn-secondary:focus {
@@ -64,12 +64,12 @@ tbody tr:hover {background-color: $krasina;}
   justify-content: center;
   align-items:center;
   height:80vh;
+  div {
+    position:relative;
+    display:flex;
+  }
+}
 
-}
-#form-menu div {
-  position:relative;
-  display:flex;
-}
 .form-wrap {
   margin: 16px;
   display:flex;
@@ -86,8 +86,8 @@ label {
 .button {
   border:2px solid #262626;
   border-radius:9px;
-  background:#000;
-  color:#fff;
+  background: black;
+  color: white;
   font-weight:bold;
   padding:12px 24px;
   transition:.2s;
@@ -144,4 +144,20 @@ input:-webkit-autofill:active  {
   font-size: 12px;
   top: -12px;
   color: #11998e;
+}
+span {
+  font-size: 0.55em;
+  color: #efaadd;
+}
+
+.progress-bar-container {
+  width: 200ox;
+  margin-bottom: 5px;
+}
+
+.progress-bar {
+  background-color: $krasina;
+  color: white;
+  border-radius: 5px;
+  text-align: center;
 }

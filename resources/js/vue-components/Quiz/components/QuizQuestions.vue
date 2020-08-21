@@ -1,6 +1,13 @@
 <template>
   <div>
      <template v-if="currentQuestion">
+<!--      Your progress-->
+<!--       <div class="progress-bar-container">-->
+<!--         <div class="progress-bar" :style="{width:(items.length/max) * 100 + '%'}">-->
+<!--           {{(items.length/max)*100+'%'}}-->
+<!--         </div>-->
+<!--       </div>-->
+
 
        <h2>{{currentQuestion.title}}</h2>
        <div>
@@ -30,6 +37,9 @@ import {QuestionStructure, QuizStructure} from "../quiz.structures";
 
 export default {
   data: () => ({
+    // max: 0,
+    // items: [],
+    // msg: 'added',
     isLoading: false,
     /** @type {QuestionStructure} */
     currentQuestion: null,
@@ -38,6 +48,7 @@ export default {
   }),
   created(){
     this.getNextQuestion();
+   // this.getQuestionCount()
   },
   methods: {
     async getNextQuestion(){
@@ -71,6 +82,10 @@ export default {
         return; //atbilde ir obligati jaizvelas
       }
 
+
+     // this.items.push(this.msg);
+
+
       const formData = new FormData();
       //formData.append('csrf', window.csrf());
       formData.append('answerId', this.selectedAnswerId);
@@ -93,6 +108,24 @@ export default {
     onLastQuestionSubmitted() {
       this.$emit('last-question-submitted');
     },
+
+   /* async getQuestionCount(){
+      const formData = new FormData();
+      let quizId = this.currentQuestion.quizId;
+      formData.append('quizId', quizId);
+
+      this.isLoading = true;
+      await Axios.post('/quiz-rpc/get-question-count', formData).then((response) => {
+        if(!response.data.questionCount){
+          return;
+        }
+
+        this.max = response.data.questionCount; // iespējams, nepareiza pieeja
+      }).finally(() => {
+        this.isLoading = false;
+      });
+
+    },*/
   }
 }
 </script>

@@ -233,8 +233,17 @@ class QuizService
         foreach ($quizArrayModels as $quizArray){
             $someArray [] = $quizArray->name;
         }
-
-
         return array($someArray, $quizStartedArray, $totalQuestionCountArray, $correctAnswerCountArray);
     }
+
+    public function getQuestionCount(int $quizId): int
+    {
+        $count = 0;
+        $questionModels = QuestionModel::query()->where('quiz_id', '=', $quizId)->get();
+        foreach ($questionModels as $questionModel){
+            $count+=1;
+        }
+        return $count;
+    }
+
 }

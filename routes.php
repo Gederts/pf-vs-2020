@@ -17,9 +17,10 @@ return array(
   '/quiz-rpc/get-all' => new Route(QuizRpcController::class, 'getAll'),
   '/quiz-rpc/start' => new Route(QuizRpcController::class, 'startQuiz'),
   '/quiz-rpc/get-question' => new Route(QuizRpcController::class, 'getQuestion'),
+ // '/quiz-rpc/get-question-count' => new Route(QuizRpcController::class, 'getQuestionCount'),
   '/quiz-rpc/save-answer' => new Route(QuizRpcController::class, 'saveAnswer'),
   '/quiz-rpc/get-results' => new Route(QuizRpcController::class, 'getResults'),
- // '/delete/user/'.$_POST['identity'] => new Route(AdminController::class, 'deleteUser',$_POST['identity']),
+ // '/delete/user/'.$_POST['identity'] => new Route(AdminController::class, 'deleteUser',$_POST['identity']),   centos izveidot parametru, bet no tā nebija īsti jēga
  // '/edit/user/'.$_POST['identity'] => new Route(AdminController::class, 'editUser',$_POST['identity']),
   '/admin/toggle-user-admin' => new Route(AdminController::class, 'toggleUserAdmin', [Route::METHOD_POST]),
   '/admin/view-user' => new Route(AdminController::class, 'viewUser', [Route::METHOD_GET]),
